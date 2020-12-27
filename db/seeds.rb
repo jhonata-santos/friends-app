@@ -1,0 +1,8 @@
+Friend.create(first_name: "Jhonata", last_name: "Santos", email: "jhonata.santos@gmail.com", phone: "(11)94926-4067", gender: "male")
+Friend.create(first_name: "Pedro", last_name: "Alves", email: "pedro.alves@gmail.com", phone: "(11)94926-4068", gender: "male")
+Friend.create(first_name: "Luis", last_name: "Santos", email: "luis.santos@gmail.com", phone: "(11)94926-4069", gender: "male")
+Friend.create(first_name: "Stefany", last_name: "Silva", email: "stefany.silva@gmail.com", phone: "(11)94926-4070", gender: "female")
+Friend.create(first_name: "Luzia", last_name: "Santos", email: "luzia.santos@gmail.com", phone: "(11)94926-4071", gender: "female")
+Friend.create(first_name: "Larissa", last_name: "Sousa", email: "larissa.sousa@gmail.com", phone: "(11)94926-4072", gender: "female")
+Friend.create(first_name: "Lucas", last_name: "Pietro", email: "lucas.pietro@gmail.com", phone: "(11)94926-4073", gender: "male")
+Friend.create(first_name: "Jessica", last_name: "Soares", email: "jessica.soares@gmail.com", phone: "(11)94926-4073", gender: "female")

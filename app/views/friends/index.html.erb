@@ -1,0 +1,57 @@
+<br/>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">FIRST NAME</th>
+      <th scope="col">LAST NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">GENDER</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <th><%= friend.id %></th>
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.gender %></td>
+        <td>
+          <%= link_to 'Show', friend, class:"btn btn-outline-secondary" %>
+          <%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-outline-info" %>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-danger" id="btn-modal">
+            Delete
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="my-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                </div>
+                <div class="modal-body">
+                  By clicking delete you will no longer be able to recover this data
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="btn-close-modal">Cancel</button>
+                  <%= link_to 'Delete', friend, method: :delete, data: {}, class:"btn btn-danger" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= paginate @friends %></p>
+

@@ -1,0 +1,33 @@
+.section-padding {
+  padding: 60px 0;
+}
+
+.copyright {
+  color: #e5e5e5;
+  font-weight: 600;
+  margin-left: 3px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color:#6c757d;
+  border-color:#6c757d;
+}
+
+.page-item .page-link:hover {
+  color: #212529;
+}
