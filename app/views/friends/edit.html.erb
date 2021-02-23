@@ -35,6 +35,9 @@
                     </div>
                   </div>
                 </div>
+
+                </br>
+
                 <ul class="nav nav-tabs">
                   <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
                 </ul>
@@ -46,13 +49,13 @@
                           <div class="row">
                             <div class="col">
                               <div class="form-group">
-                                <label>First Name<b style="color:red">*</b></label>
+                                <label>First Name <b style="color:red">*</b></label>
                                 <%= form.text_field :first_name, class:"form-control", placeholder: "First Name", required: true %>
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-group">
-                                <label>Last Name<b style="color:red">*</b></label>
+                                <label>Last Name <b style="color:red">*</b></label>
                                 <%= form.text_field :last_name, class:"form-control", placeholder: "Last Name", required: true %>
                               </div>
                             </div>
@@ -60,21 +63,21 @@
                           <div class="row">
                             <div class="col">
                               <div class="form-group">
-                                <label>Email<b style="color:red">*</b></label>
-                                <%= form.text_field :email, class:"form-control", placeholder: "Email", required: true %>
+                                <label>Email <b style="color:red">*</b></label>
+                                <%= form.email_field :email, class:"form-control", placeholder: "Email", required: true %>
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col">
                               <div class="form-group">
-                                <label>Phone<b style="color:red">*</b></label>
+                                <label>Phone <b style="color:red">*</b></label>
                                 <%= form.text_field :phone, class:"form-control", placeholder: "Phone", required: true %>
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-group">
-                                <label>Gender<b style="color:red">*</b></label>
+                                <label>Gender <b style="color:red">*</b></label>
                                 <br/>
                                 <div class="dropdown">
                                   <%= form.select :gender, ['male', 'female'], { include_blank: "Select something" }, { :style => 'border: 1px solid #ced4d9; height: 2.4rem;border-radius: 4px;padding: 0.5rem;' } %>
@@ -82,13 +85,38 @@
                               </div>
                             </div>
                           </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>City <b style="color:red">*</b></label>
+                                <%= form.text_field :city, class:"form-control", placeholder: "City", required: true %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>State <b style="color:red">*</b></label>
+                                <%= form.text_field :state, class:"form-control", placeholder: "State", required: true %>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Postal Code <b style="color:red">*</b></label>
+                                <%= form.text_field :postal_code, class:"form-control", placeholder: "Postal Code", required: true %>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      
+                      </br>
+
                       <div class="row">
                         <div class="col d-flex justify-content-end">
                           <div class="actions">
-                            <%= form.submit 'Update Friend', class:"btn btn-success" %>
                             <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+                            <%= form.submit 'Update Friend', class:"btn btn-success" %>
                           </div>
                         </div>
                       </div>
@@ -103,3 +131,5 @@
     </div>
   </div>
 </div>
+
+</br>

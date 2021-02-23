@@ -5,6 +5,10 @@
     <p class="lead"><strong>Email:</strong> <%= @friend.email %>  <%= @friend.phone %></p>
     <p class="lead"><strong>Phone:</strong> <%= @friend.phone %></p>
     <p class="lead"><strong>Gender:</strong> <%= @friend.gender %></p>
+    <p class="lead"><strong>City:</strong> <%= @friend.city %></p>
+    <p class="lead"><strong>State:</strong> <%= @friend.state %></p>
+    <p class="lead"><strong>Postal Code:</strong> <%= @friend.postal_code %></p>
+
     <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-info" %>
     <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
   </div>

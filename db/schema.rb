@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_184114) do
-  create_table "friends", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone"
-    t.string "gender"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 2021_02_23_132948) do
+  create_table 'friends', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'email'
+    t.string 'phone'
+    t.string 'gender'
+    t.string 'city'
+    t.string 'state'
+    t.string 'postal_code'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 end

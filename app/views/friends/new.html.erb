@@ -1,20 +1,112 @@
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">First Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Joao">
+<br/>
+
+<div class="container">
+  <div class="row flex-lg-nowrap">
+    <div class="col">
+      <div class="row">
+        <div class="col mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="e-profile">
+                <div class="row">
+                  <div class="mx-auto" style="width: 140px;">
+                    <div class="border border-light d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                        <%= image_tag "user-interrogation-image.png", class: "img-fluid img-thumbnail rounded center-img" %>
+                    </div>
+                  </div>
+                </div>
+
+                </br>
+
+                <div class="tab-content pt-4">
+                  <div class="tab-pane active">
+                    <%= form_with(model: @friend, :html => {:id => "#emailForm"}) do |form| %>
+                      <div class="row">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>First Name<b style="color:red">*</b></label>
+                                <%= form.text_field :first_name, class:"form-control", placeholder: "First Name", required: true %>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Last Name<b style="color:red">*</b></label>
+                                <%= form.text_field :last_name, class:"form-control", placeholder: "Last Name", required: true %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Email<b style="color:red">*</b></label>
+                                <%= form.email_field :email, class:"form-control", placeholder: "test@test.com", required: true %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Phone<b style="color:red">*</b></label>
+                                <%= form.text_field :phone, class:"form-control", placeholder: "(11) 99999-9999", required: true %>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Gender<b style="color:red">*</b></label>
+                                <br/>
+                                <div class="dropdown">
+                                  <%= form.select :gender, ['male', 'female'], { include_blank: "Select something" }, { :style => 'border: 1px solid #ced4d9; height: 2.4rem;border-radius: 4px;padding: 0.5rem;' } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>City <b style="color:red">*</b></label>
+                                <%= form.text_field :city, class:"form-control", placeholder: "City", required: true %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>State <b style="color:red">*</b></label>
+                                <%= form.text_field :state, class:"form-control", placeholder: "State", required: true %>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Postal Code <b style="color:red">*</b></label>
+                                <%= form.text_field :postal_code, class:"form-control", placeholder: "Postal Code", required: true %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      </br>
+
+                      <div class="row">
+                        <div class="col d-flex justify-content-end">
+                          <div class="actions">
+                            <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+                            <%= form.submit 'Add Friend', class:"btn btn-success" %>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Last Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Felix">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="joao.felix@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Phone</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="(11)99999-9999">
-  </div>
-  <button type="submit" class="btn btn-success">Create</button>
-  <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
-</form>
+</div>
+
+</br>

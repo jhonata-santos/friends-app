@@ -31,3 +31,32 @@
 .page-item .page-link:hover {
   color: #212529;
 }
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.pretty th .current {
+  padding-right: 30px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(arrow_up.png);
+}
+
+.pretty th .desc {
+  background-image: url(arrow_down.png);
+}
+
+.link_table {
+  color: white;
+  font-size: 14px;
+}
+
+.link_table:hover {
+  color: #999d9f;
+  text-decoration: none;
+}
