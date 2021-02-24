@@ -1,8 +1,76 @@
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-md-12">
+            <div class="title-header text-center">
+                <h4>OVERVIEW OF FRIENDS</h4>
+            </div>
+        </div>
+	</div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="card-counter primary">
+      <i class="fa fa-location-arrow"></i>
+      <span class="count-numbers"><%= count_state %></span>
+      <span class="count-name">State</span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card-counter danger">
+      <i class="fa fa-female"></i>
+      <span class="count-numbers"><%= count_genders['female'] %></span>
+      <span class="count-name">Female</span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card-counter success">
+      <i class="fa fa-male"></i>
+      <span class="count-numbers"><%= count_genders['male'] %></span>
+      <span class="count-name">Male</span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card-counter info">
+      <i class="fa fa-users"></i>
+      <span class="count-numbers"><%= count_friends %></span>
+      <span class="count-name">Friends</span>
+    </div>
+  </div>
+</div>
+
 <br/>
+
+<%
+=begin%>
+ <div class="row justify-content-center">
+  <div class="col-12 col-md-10 col-lg-12">
+      <form class="card card-sm">
+          <div class="card-body row no-gutters align-items-center">
+              <div class="col-auto">
+                  <i class="fas fa-search h4 text-body search-icon-align"></i>
+              </div>
+              <div class="col">
+                  <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+              </div>
+              <div class="col-auto">
+                  <button class="btn btn-lg btn-outline-primary" type="submit">Search</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</div> 
+<%
+=end%>
 
 <table class="table pretty">
   <thead class="thead-dark">
-    <tr>
+    <tr class="filters">
       <th scope="col"><%= sortable "id" %></th>
       <th scope="col"><%= sortable "first_name" %></th>
       <th scope="col"><%= sortable "last_name" %></th>
@@ -22,28 +90,30 @@
         <td><%= friend.phone %></td>
         <td><%= friend.gender %></td>
         <td>
-          <%= link_to 'Show', friend, class:"btn btn-outline-secondary" %>
-          <%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-outline-info" %>
+          <div style="float: right;">
+            <%= link_to 'Show', friend, class:"btn btn-outline-secondary" %>
+            <%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-outline-info" %>
 
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#btn_modal_<%= friend.id %>">Delete</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#btn_modal_<%= friend.id %>">Delete</button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="btn_modal_<%= friend.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  By clicking delete, you will no longer be able to recover this data and the ID <strong><%= friend.id %></strong> will be deleted
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <%= link_to 'Delete', friend, method: :delete, data: {}, class:"btn btn-danger" %>
+            <!-- Modal -->
+            <div class="modal fade" id="btn_modal_<%= friend.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    By clicking delete, you will no longer be able to recover this data and the ID <strong><%= friend.id %></strong> will be deleted
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <%= link_to 'Delete', friend, method: :delete, data: {}, class:"btn btn-danger" %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,3 +126,4 @@
 
 <p><%= paginate @friends %></p>
 
+</br>

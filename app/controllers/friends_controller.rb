@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
-  helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction, :count_friends, :count_genders, :count_state
   skip_before_action :verify_authenticity_token
   respond_to :html, :json
 
@@ -75,6 +75,18 @@ class FriendsController < ApplicationController
     end
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'Not found friend' }.to_json, status: 404
+  end
+
+  def count_friends
+    Friend.distinct.count(:id)
+  end
+
+  def count_genders
+    Friend.group(:gender).count
+  end
+
+  def count_state
+    Friend.distinct.count(:state)
   end
 
   private
